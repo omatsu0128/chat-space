@@ -1,0 +1,47 @@
+.Chat-main
+  .Chat-main__group-info
+    .leftbox
+      .group-name
+        current-group-neme
+      %ul.group-members
+        Member：
+        %li.group-menber
+          kimi
+
+    = link_to "#", class: "edit-btn" do
+      Edit
+
+  .Chat-main__message-list
+    .message-box
+      .user-info
+        .user-name
+          masa
+        .post_date_and_time
+          2019//11/20
+      .message
+        おはよう
+    .message-box
+      .user-info
+        .user-name
+          masa
+        .post_date_and_time
+          2019//11/20
+      .message
+        おはよう
+    .message-box
+      .user-info
+        .user-name
+          masa
+        .post_date_and_time
+          2019//11/20
+      .message
+        おはよう
+
+  .Chat-main__message-form
+    %form.Form__contents
+      .input-box
+        %input{"type": "text", "placeholder": "type a message", class: "input-box__text"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input.Form__submitBtn{"type": "submit", "value": "Send", class:"submit-btn"}
