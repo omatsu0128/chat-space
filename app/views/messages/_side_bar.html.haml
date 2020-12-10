@@ -4,30 +4,17 @@
       .top-items__name
         = current_user.name
       .top-items__icons
-        = link_to "#" do
+        = link_to new_group_path do
           = icon('far', 'edit', class: "btn--icon")
         = link_to "edit_user_account" do
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: "btn--icon")
 
   .Side-bar__group-list
-    .group-boxes
-      .group-boxes__name
-        group1
-      .group-boxes__new-message
-        新規メッセージ
-    .group-boxes
-      .group-boxes__name
-        group1
-      .group-boxes__new-message
-        新規メッセージ
-    .group-boxes
-      .group-boxes__name
-        group1
-      .group-boxes__new-message
-        新規メッセージ
-    .group-boxes
-      .group-boxes__name
-        group1
-      .group-boxes__new-message
-        新規メッセージ
+    - current_user.groups.each do |group|
+      .group-boxes
+        = link_to '#' do
+          .group-boxes__name
+            = group.name
+          .group-boxes__new-message
+            メッセージはまだありません
